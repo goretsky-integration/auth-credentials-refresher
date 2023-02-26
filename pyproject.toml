@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "auth-credentials-refresher"
+version = "0.1.0"
+description = ""
+authors = ["Eldos <eldos.baktybekov@gmail.com>"]
+readme = "README.md"
+packages = [{include = "auth_credentials_refresher"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+httpx = "^0.23.3"
+bs4 = "^0.0.1"
+lxml = "^4.9.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
