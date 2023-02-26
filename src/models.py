@@ -1,10 +1,10 @@
 from dataclasses import dataclass
 
-__all__ = ('OfficeManagerAuthFormCredentials',)
+__all__ = ('ConnectAuthorizeFormData',)
 
 
 @dataclass(frozen=True, slots=True)
-class OfficeManagerAuthFormCredentials:
+class ConnectAuthorizeFormData:
     client_id: str
     redirect_uri: str
     response_type: str
