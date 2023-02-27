@@ -1,0 +1,9 @@
+[base_url]
+auth = ""
+office_manager = ""
+
+[auth_credentials]
+username = ""
+password = ""
+role_id = 0
+department_uuid = ""
