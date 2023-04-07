@@ -6,9 +6,9 @@ __all__ = ('parse_connect_authorize_form_data',)
 
 
 def parse_connect_authorize_form_data(
-        auth_form_html: str
+        connect_authorize_form_html: str
 ) -> models.ConnectAuthorizeFormData:
-    soup = BeautifulSoup(auth_form_html, 'lxml')
+    soup = BeautifulSoup(connect_authorize_form_html, 'lxml')
     required_credentials_names = (
         'client_id',
         'redirect_uri',
