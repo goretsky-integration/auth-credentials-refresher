@@ -2,12 +2,12 @@ from bs4 import BeautifulSoup
 
 import models
 
-__all__ = (
-    'parse_connect_authorize_form_data',
-)
+__all__ = ('parse_connect_authorize_form_data',)
 
 
-def parse_connect_authorize_form_data(auth_form_html: str) -> models.ConnectAuthorizeFormData:
+def parse_connect_authorize_form_data(
+        auth_form_html: str
+) -> models.ConnectAuthorizeFormData:
     soup = BeautifulSoup(auth_form_html, 'lxml')
     required_credentials_names = (
         'client_id',
@@ -20,6 +20,11 @@ def parse_connect_authorize_form_data(auth_form_html: str) -> models.ConnectAuth
         'nonce',
         'state',
     )
-    tags_with_credentials = soup.find_all(attrs={'name': required_credentials_names})
-    connect_authorize_form_data = {tag['name']: tag['value'] for tag in tags_with_credentials}
+    tags_with_credentials = soup.find_all(
+        attrs={'name': required_credentials_names},
+    )
+    connect_authorize_form_data = {
+        tag['name']: tag['value']
+        for tag in tags_with_credentials
+    }
     return models.ConnectAuthorizeFormData(**connect_authorize_form_data)
