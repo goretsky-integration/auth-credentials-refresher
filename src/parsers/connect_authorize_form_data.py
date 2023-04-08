@@ -6,9 +6,8 @@ __all__ = ('parse_connect_authorize_form_data',)
 
 
 def parse_connect_authorize_form_data(
-        connect_authorize_form_html: str
+        connect_authorize_form_html: models.HTML,
 ) -> models.ConnectAuthorizeFormData:
-    soup = BeautifulSoup(connect_authorize_form_html, 'lxml')
     required_credentials_names = (
         'client_id',
         'redirect_uri',
@@ -20,6 +19,9 @@ def parse_connect_authorize_form_data(
         'nonce',
         'state',
     )
+
+    soup = BeautifulSoup(connect_authorize_form_html, 'lxml')
+
     tags_with_credentials = soup.find_all(
         attrs={'name': required_credentials_names},
     )

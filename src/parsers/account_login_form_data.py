@@ -6,17 +6,16 @@ __all__ = ('parse_account_login_form_data', 'fill_account_login_form_data')
 
 
 def parse_account_login_form_data(
-        account_login_form_html: str,
+        account_login_form_html: models.HTML,
 ) -> models.EmptyAccountLoginFormData:
     soup = BeautifulSoup(account_login_form_html, 'lxml')
 
     return_url = soup.find(
         attrs={'name': 'ReturnUrl'},
-    ).get('value')
-
+    )['value']
     request_verification_token = soup.find(
         attrs={'name': '__RequestVerificationToken'},
-    ).get('value')
+    )['value']
 
     return models.EmptyAccountLoginFormData(
         return_url=return_url,
