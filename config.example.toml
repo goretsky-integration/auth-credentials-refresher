@@ -1,0 +1,4 @@
+auth_base_url = ""
+office_manager_base_url = ""
+country_code = "kg"
+remember_login = false

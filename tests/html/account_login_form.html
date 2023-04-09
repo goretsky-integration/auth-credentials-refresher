@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="no-cache" http-equiv="cache-control"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <title>DodoIS Auth - Authentication</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/favicon/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/favicon/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/favicon/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/favicon/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/favicon/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/favicon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/favicon/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/static/favicon/favicon-16x16.png" sizes="16x16"/>
+    <link rel="icon" type="image/png" href="/static/favicon/favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="/static/favicon/favicon-48x48.png" sizes="48x48"/>
+    <link rel="icon" type="image/png" href="/static/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="apple-touch-icon-precomposed" href="/static/favicon/apple-touch-icon-precomposed.png"/>
+    <link rel="icon" type="image/png" href="/static/favicon/android-chrome-72x72.png" sizes="72x72"/>
+    <link rel="icon" type="image/png" href="/static/favicon/android-chrome-96x96.png" sizes="96x96"/>
+    <link rel="icon" type="image/png" href="/static/favicon/android-chrome-144x144.png" sizes="144x144"/>
+    <link rel="icon" type="image/png" href="/static/favicon/android-chrome-192x192.png" sizes="192x192"/>
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/static/favicon/mstile-144x144.png"/>
+    <meta name="theme-color" content="#ffffff">
+    <link rel="mask-icon" href="/static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+
+    <link rel="stylesheet" href="/content/app.min.css?v=L6dITxxs60lSUiqJLRlTLlIMCUdzGs7J4WJT4Eg0iNM"/>
+</head>
+<body class="body_background_grey">
+<div class="page page_login">
+
+    <form method="post" id="login-form" action="/account/login">
+        <div id="card-login" class="card card_user-login ">
+            <input type="hidden" id="ReturnUrl" name="ReturnUrl"
+                   value="/connect/authorize/callback?client_id=dodo-office-manager&amp;redirect_uri=https%3A%2F%2Fofficemanager.dodois.test%2Fsignin-oidc&amp;response_type=code&amp;scope=openid%20employee%20profile%20ext_profile%20roles%20email%20phone%20users%20offline_access%20dodo_staff_api%20accounting.admin%20inventory.admin&amp;code_challenge=VavF5ma--X3oDBTyUns7pMiuz7bb3D_k_VicS5_wQhU&amp;code_challenge_method=S256&amp;response_mode=form_post&amp;nonce=638166454148826158.ZTc5MGI4YTEtMTc3NC00MzdiLWExODktMTA2ZDNmNjY2Y2U3ZWFmZDc2NTUtMjFhYi00ZmIwLThlMTMtN2ZiZTA4NmFjN2Vl&amp;state=CfDJ8JIVAtoTAL1Bq_ajCWf_96wLZMoeKAtfo90eTpZVK1hQegycBi1u0W3dhT9PtbtiEQLeMnFTxhMmirsIGg81_NOecjv-7qYutvYjEsDyQD9qHrNRUexxEFgpsqWpEjuSlfIukDDMXhvShonIGkXONQZbTYRAmTLoJyl4NxHgP1Vjsx68Ao_ARupLdFEpwn-qfGsuQ1Bd3S854ken-dwHUNa_cHAEQfXF8u4flqo_pAglv2c-fMQQjpt1298eZYJd9UQK6vAVoYJouxiII2TrbPcrQzT1P3KhY_vIz_i10U88C8B8d_MIB657P8NT56rdAVtuJ3vEr6cPLq5P-_Cmpy--XJnrufAzonKdFkpKSS5OLPGzJ1HmzmfcGk9SYLaQhw"/>
+            <div class="card__logo">
+                <svg class="svg_logo">
+                    <path d="M118.064 19.1298C118.064 20.7256 121.428 21.4636 123.647 21.4636C127.174 21.4636 130 19.9875 130 16.7162C130 14.0234 128.015 13.1257 125.959 12.5473C123.343 11.8092 122.409 11.7095 122.409 10.8917C122.409 10.1935 123.11 9.73473 124.137 9.73473C125.749 9.73473 126.146 10.2733 127.361 10.2733C128.365 10.2733 129.043 9.635 129.043 8.75732C129.043 7.5206 127.361 6.62298 124.324 6.62298C121.171 6.62298 118.345 8.07912 118.345 11.1709C118.345 13.7441 120.377 14.4622 122.339 15.0008C124.488 15.5992 125.936 15.8186 125.936 16.8957C125.936 17.5939 125.399 18.2322 123.927 18.2322C121.989 18.2322 120.774 17.4144 119.84 17.4144C118.695 17.4144 118.064 18.2522 118.064 19.1298Z"
+                          fill="black"></path>
+                    <path d="M112.809 6.48047C111.777 6.48047 110.933 7.12975 110.933 8.28917V19.7907C110.933 20.9037 111.777 21.5994 112.809 21.5994C113.841 21.5994 114.685 20.9501 114.685 19.7907V8.28917C114.638 7.17612 113.794 6.48047 112.809 6.48047ZM96.2549 18.2149C93.8632 18.2149 92.1749 16.4526 92.1749 14.041C92.1749 11.6758 93.9101 9.91345 96.2549 9.91345C98.6465 9.91345 100.335 11.6758 100.335 14.041C100.335 16.4526 98.7403 18.2149 96.2549 18.2149ZM96.2549 6.48155C91.8936 6.48155 88.564 9.72795 88.564 14.041C88.564 18.4005 91.8936 21.6005 96.2549 21.6005C100.616 21.6005 103.946 18.3077 103.946 13.9946C103.946 9.68157 100.616 6.48155 96.2549 6.48155ZM78.8567 18.0294H75.7616V10.0526H78.8567C81.3421 10.0526 83.0304 11.5367 83.0304 13.9946C83.0304 16.4526 81.389 18.0294 78.8567 18.0294ZM78.8567 6.62068H73.9326C72.9478 6.62068 72.1037 7.36272 72.1037 8.47577V19.699C72.1037 20.8121 72.9478 21.4613 73.9326 21.4613H78.8567C83.2648 21.4613 86.5944 18.4468 86.5944 13.9946C86.6413 9.58882 83.2648 6.62068 78.8567 6.62068ZM62.0212 18.2149C59.6296 18.2149 57.9413 16.4526 57.9413 14.041C57.9413 11.6758 59.6765 9.91345 62.0212 9.91345C64.4129 9.91345 66.1011 11.6758 66.1011 14.041C66.1011 16.4526 64.5067 18.2149 62.0212 18.2149ZM62.0212 6.48155C57.6599 6.48155 54.3304 9.72795 54.3304 14.041C54.3304 18.4005 57.6599 21.6005 62.0212 21.6005C66.3825 21.6005 69.7121 18.3077 69.7121 13.9946C69.7121 9.68157 66.3825 6.48155 62.0212 6.48155ZM44.6699 18.0294H41.5748V10.0526H44.6699C47.1554 10.0526 48.8436 11.5367 48.8436 13.9946C48.8436 16.4526 47.1554 18.0294 44.6699 18.0294ZM44.6699 6.62068H39.7459C38.7611 6.62068 37.917 7.36272 37.917 8.47577V19.699C37.917 20.8121 38.7611 21.4613 39.7459 21.4613H44.6699C49.0781 21.4613 52.4077 18.4468 52.4077 13.9946C52.4077 9.58882 49.0312 6.62068 44.6699 6.62068Z"
+                          fill="black"></path>
+                    <path d="M12.0932 0C19.9576 0 26 5.39887 26 13.4108C26 21.4228 19.9548 27 12.0932 27H3.25532C1.47866 26.9915 0 25.8109 0 23.7443V3.36049C0 1.30796 1.47866 0 3.25532 0H12.0932Z"
+                          fill="#FF6900"></path>
+                    <path d="M21.8561 10.2117C21.8121 10.5547 21.419 10.5547 21.2429 10.2549C20.6738 9.3096 19.9316 9.13955 18.7522 9.05309C17.8721 9.00985 16.8307 9.09632 15.8684 9.09632C15.8426 9.09911 15.8164 9.09684 15.7915 9.08964C15.7665 9.08244 15.7433 9.07045 15.7231 9.05437C15.7029 9.03828 15.6862 9.01843 15.6739 8.99594C15.6615 8.97346 15.6539 8.9488 15.6513 8.92339C15.8273 8.10774 16.5314 6.61768 17.2678 6.47646C17.6169 6.43322 18.4031 6.34676 18.8402 6.34676C20.8498 6.34676 21.9441 8.62365 21.8561 10.2117ZM10.4939 17.9935C11.9745 18.38 13.5097 18.5251 15.0382 18.4229C17.0409 18.2901 18.9786 17.6701 20.6767 16.6187C20.0196 18.2558 17.5289 19.2731 15.1672 19.5297C15.1672 19.6594 15.1232 19.7429 15.1232 19.8726C16.9157 19.7862 18.6202 19.1867 19.4064 18.6708C18.9693 20.2588 16.7837 20.9044 14.7741 21.0312C14.7243 21.1498 14.6655 21.2644 14.5981 21.3742C15.59 21.3883 16.5786 21.2582 17.5318 20.988C16.6106 22.6654 12.6765 23.824 9.35558 22.2907C10.0471 20.9573 10.4345 19.4918 10.4909 17.9964L10.4939 17.9935ZM21.463 6.56292C21.0955 6.22127 20.663 5.95425 20.1903 5.77719C19.7176 5.60012 19.2139 5.5165 18.7082 5.53111C17.3969 5.53111 16.3055 5.87409 14.6861 5.91732C13.5948 5.96055 12.5885 3.61161 11.2772 3.29746C10.7109 2.05526 9.39078 1.88233 8.61335 2.52793C7.87112 2.09849 6.73285 2.31465 6.69178 3.13029C5.86154 2.87378 4.7702 3.30322 5.24839 4.41861C3.1948 4.46184 2.84569 6.26606 4.19813 6.43611C2.40564 7.42468 3.23587 9.14243 4.72326 8.79658C4.99023 11.3732 6.16371 14.7223 4.24213 15.5379C4.02504 15.6244 3.1508 15.8261 1.48739 15.4514C1.00626 15.3217 0.481127 15.1949 0 15.0652V16.3968C1.44338 16.7397 2.88383 16.9991 3.81381 16.9127C6.34853 16.6562 6.48055 14.607 6.34853 12.7912C6.21652 10.9755 5.60631 8.9695 5.8234 7.51114L5.73539 7.42468C4.81714 8.37002 4.20693 8.11063 4.11892 7.81088C3.9869 7.20852 5.08117 6.43611 5.69138 6.17959C5.69138 6.13636 5.73539 6.09313 5.73539 6.0499C5.16625 6.13636 4.46803 6.0499 4.42402 5.66369C4.38002 5.19102 5.38628 4.71835 6.69764 4.84805C6.74165 4.84805 6.74165 4.80482 6.78566 4.80482L6.52455 4.67512C6.17544 4.50219 6.08743 4.20245 6.23118 4.0324C6.33036 3.92755 6.45308 3.8469 6.58957 3.79686C6.72607 3.74683 6.87257 3.72879 7.01742 3.74419C7.42241 3.74919 7.82196 3.83653 8.1909 4.0007C8.2349 4.0007 8.2349 3.95747 8.27891 3.95747C8.1909 3.871 8.06182 3.78454 8.01781 3.70096C7.9675 3.63824 7.9424 3.55956 7.94726 3.47986C7.95213 3.40016 7.98663 3.32499 8.04421 3.26864C8.21566 3.18579 8.40926 3.15792 8.59769 3.18895C8.78613 3.21997 8.95989 3.30833 9.09448 3.44156L9.31157 3.65484C9.33547 3.65777 9.35972 3.65541 9.38257 3.64793C9.40541 3.64045 9.42626 3.62804 9.44359 3.61161C9.36661 3.53367 9.31989 3.43168 9.31157 3.3234C9.29789 3.28967 9.29166 3.25347 9.29329 3.21719C9.29491 3.18092 9.30435 3.1454 9.32099 3.11298C9.33763 3.08056 9.36108 3.05198 9.3898 3.02913C9.41853 3.00628 9.45186 2.98967 9.48759 2.98042C9.5867 2.96345 9.68867 2.97449 9.78164 3.01225C9.87461 3.05 9.95475 3.11293 10.0127 3.1937C10.1242 3.35946 10.2111 3.53996 10.2709 3.72978C9.35264 3.81624 8.26131 4.15922 7.60416 5.06133C7.25232 5.57164 7.02236 6.15344 6.93143 6.76329C6.8405 7.37314 6.89095 7.99529 7.07903 8.5833C7.34012 9.91485 7.86526 11.1599 8.34639 12.4482V12.4915C9.39078 15.4514 11.4092 22.749 1.66341 26.614C2.16877 26.8524 2.71948 26.984 3.27988 27.0002H4.28614C5.97944 26.1616 7.45851 24.9587 8.61335 23.4811C13.0726 25.4121 17.1211 24.4264 18.8813 21.2474C19.4246 20.9104 19.8835 20.4573 20.2238 19.9218C20.5641 19.3864 20.7771 18.7824 20.8469 18.1549C21.1672 17.7724 21.3932 17.3223 21.5071 16.8399C21.6211 16.3574 21.6201 15.8556 21.504 15.3736C21.46 15.2007 21.2869 15.2007 21.0229 15.3304C17.3969 17.4776 14.205 17.8205 10.4029 16.7052C10.3017 15.536 10.1263 14.3741 9.87778 13.2264C9.78977 11.7248 10.2709 10.9928 13.0696 11.8949C14.9061 12.3675 15.7364 13.1832 16.3906 13.6242C16.684 13.8374 17.0888 14.0968 17.3088 13.9124C17.4409 13.8259 17.4849 13.5694 17.4849 13.2697C17.4409 12.454 17.0477 11.0792 16.6986 10.5633C17.5283 10.5189 18.3597 10.5189 19.1894 10.5633C20.2396 10.7363 20.3247 11.2925 20.4567 11.5087C20.7501 12.3733 22.4663 12.1514 22.5983 11.4222C22.8594 9.92061 22.9474 7.94346 21.463 6.57157V6.56292ZM2.05653 19.4432C1.37269 19.4003 0.686767 19.4003 0.0029337 19.4432V20.3453C1.17641 20.0888 1.92451 19.9591 1.92451 19.9591L2.05653 19.4432Z"
+                          fill="black"></path>
+                    <path d="M12.9011 10.3074C11.3984 9.96965 9.72846 9.54669 8.8632 8.27782C8.8632 8.23524 8.81993 8.23524 8.77667 8.23524C8.7652 8.23524 8.75419 8.23973 8.74608 8.24771C8.73797 8.2557 8.73341 8.26653 8.73341 8.27782C8.72707 8.35047 8.74209 8.42339 8.77667 8.48788L8.64688 8.53046C8.43345 8.19266 8.35846 7.81228 8.60362 7.51423C8.94684 7.09127 9.5929 7.13385 10.0227 7.38649L9.97939 7.51423C9.77915 7.46296 9.56734 7.47792 9.37659 7.55681C9.34655 7.57161 9.3201 7.59262 9.29906 7.6184C9.27802 7.64418 9.26288 7.67412 9.25467 7.70619C9.24645 7.73825 9.24536 7.77168 9.25147 7.8042C9.25758 7.83671 9.27074 7.86755 9.29006 7.8946C10.0198 9.24863 12.1743 9.54385 14.7037 9.33379C14.7431 9.33942 14.7833 9.33734 14.8218 9.32768C14.8604 9.31802 14.8967 9.30097 14.9286 9.27751C14.9604 9.25404 14.9873 9.22462 15.0076 9.19093C15.0279 9.15724 15.0413 9.11994 15.047 9.08116C15.236 8.24091 15.6514 7.46628 16.2497 6.83863C15.8379 6.90494 15.4208 6.93345 15.0037 6.92379C13.7144 7.00895 12.9415 6.83863 12.7252 6.67115L12.7684 6.54341C12.8982 6.58599 13.0568 6.58599 13.0568 6.54341C13.0568 6.50083 13.0568 6.45825 13.0136 6.41567C12.7713 6.19142 11.6522 5.05596 11.6522 5.05596C11.5224 4.08231 10.1063 4.08231 9.54676 5.01338L9.3737 4.97081C9.41052 4.78936 9.48302 4.61675 9.58714 4.46269C8.43345 4.71533 7.73835 5.77414 7.61145 6.7336C7.09517 11.0483 13.7548 10.0321 15.6469 11.7665C15.6901 11.8091 15.7767 11.9368 15.8199 11.8517C15.8632 11.7665 15.047 10.7531 12.8982 10.2876L12.9011 10.3074ZM10.5908 5.12977C10.8793 5.04461 11.3638 5.33983 11.5801 5.80536C11.7964 6.2709 11.7532 6.73644 11.4503 6.86134C11.1475 6.98624 10.6658 6.67115 10.4495 6.19142C10.4063 6.10626 10.4063 6.06368 10.363 5.98136H10.4063C10.4417 6.02033 10.4874 6.0489 10.5383 6.06393C10.5892 6.07895 10.6433 6.07985 10.6947 6.06652C10.8245 5.98136 10.7812 5.81388 10.6947 5.64356C10.6081 5.47324 10.4812 5.39092 10.3515 5.39092L10.3082 5.34834C10.3708 5.25495 10.4602 5.18187 10.5649 5.13828"
+                          fill="white"></path>
+                    <path d="M20.5833 16.1992C18.7998 17.2631 16.7647 17.8905 14.6614 18.0248C13.0565 18.1043 11.4481 17.9579 9.88865 17.5903C9.88801 18.0281 9.84157 18.4648 9.75 18.8939C11.0897 19.1921 12.4595 19.3525 13.8356 19.3722C13.7432 19.8504 13.1916 21.5885 11.8606 22.6734C14.3255 22.7609 16.5871 21.8481 17.2773 20.632C16.2803 20.9235 15.239 21.0556 14.1961 21.0228C14.2423 20.8916 14.3348 20.807 14.381 20.6757C16.4916 20.5883 18.787 19.9379 19.2461 18.2873C18.4204 18.8093 16.6302 19.4159 14.7476 19.5034C14.7476 19.3722 14.7938 19.2876 14.7938 19.1564C17.2588 18.8647 19.8901 17.8528 20.5772 16.2021"
+                          fill="white"></path>
+                </svg>
+            </div>
+            <div class="card__row">
+                <input class="input input_text" autocomplete="off" autofocus data-val-required="Login is required"
+                       type="text" id="Username" maxlength="200" name="Username" value="" placeholder="Login">
+            </div>
+            <div class="card__row">
+                <input class="input input_text" autocomplete="off" data-val-required="Password is required"
+                       type="password" id="Password" maxlength="200" name="Password" placeholder="Password">
+            </div>
+            <div class="card__row">
+                <select class="text-muted" autocomplete="off" id="TenantName" name="TenantName">
+                    <option selected="selected" value="dodopizza">Dodo Pizza</option>
+                    <option value="drinkit">Drinkit</option>
+                </select>
+            </div>
+            <div class="card__row">
+                <select class="text-muted" data-tenant-name="dodopizza" id="CountryCode_dodopizza" autocomplete="off"
+                        name="CountryCode">
+                    <option selected="selected" value="Ru">Russia</option>
+                    <option value="Kz">Kazakhstan</option>
+                </select>
+                <select disabled class="text-muted hidden" data-tenant-name="drinkit" id="CountryCode_drinkit"
+                        autocomplete="off" name="CountryCode">
+                    <option selected="selected" value="Ru">Russia</option>
+                    <option value="Ae">United Arab Emirates</option>
+                </select>
+            </div>
+            <div class="card__row card__row_centered card__row_big-margin-bottom">
+
+                <input class="input input_checkbox " type="checkbox" id="RememberLogin" name="RememberLogin"
+                       value="true">
+                <label id="remember-me-label" class="text-muted " for="RememberLogin">
+                    Remember me
+                </label>
+            </div>
+            <div class="card__row card__row_button">
+                <button class="button button_blue" name="authMethod" value="local" type="submit">Login</button>
+            </div>
+        </div>
+        <input name="__RequestVerificationToken" type="hidden"
+               value="CfDJ8LdWR5S65pFFhlxr81cPG8OzTWDY194hUqJjKFLAEc5KLbmj5_yZyZn6oGaG7u6Wl0TMogB1WAlb8LoJWGFTFW3mxDHU_klT9M0uUISmr9KZ3uXNKfcO_7RQFB2vZZIzl2ZCVkOsOukqIDN0t1Qx_AY"/><input
+            name="RememberLogin" type="hidden" value="false"></form>
+    <a class="card card_device-login" href="/device/register">
+        <div class="card__row card__row_flex card__row_items-centered">
+            <div class="device-link__icon">
+                <use xlink:href="#icon-tv">
+                    <svg viewBox="0 0 92 57" id="icon-tv">
+                        <path d="M16.866 47.7584C15.6355 47.7584 14.6379 46.7587 14.6379 45.5256V41.0598H16.866V44.4712C16.866 45.0192 17.3093 45.4635 17.8562 45.4635H26.397V47.7584H16.866Z"
+                              fill="black"></path>
+                        <path d="M16.866 19.1654H14.6379V2.23286C14.6379 0.999686 15.6355 0 16.866 0H89.772C91.0025 0 92 0.999685 92 2.23286V45.5256C92 46.7587 91.0025 47.7584 89.772 47.7584H56.0421V45.4635H88.7817C89.3286 45.4635 89.772 45.0192 89.772 44.4712V3.22524C89.772 2.67717 89.3286 2.23286 88.7817 2.23286H17.8562C17.3093 2.23286 16.866 2.67717 16.866 3.22525V19.1654Z"
+                              fill="black"></path>
+                        <path d="M5.06621 17.3977C3.74825 17.3977 2.63886 18.3862 2.48469 19.698L0.0155912 40.7056C-0.140437 42.0331 0.894514 43.1997 2.22832 43.1997H14.5915C14.5915 43.1997 14.3015 47.1631 11.2104 50.1698C10.7672 50.6008 11.0507 51.4799 11.6682 51.4799H26.397V45.34C26.0003 44.0868 25.9328 43.1997 25.9328 43.1997H26.397V40.9978H3.4361C2.6949 40.9978 2.11986 40.3494 2.20687 39.6117L4.48024 20.3368C4.54652 19.7749 5.02188 19.3515 5.58655 19.3515H35.2423C35.8578 19.3515 36.3798 19.8046 36.4675 20.4152L38.2217 32.6246H40.4554L38.4087 19.5975C38.2097 18.3309 37.1205 17.3977 35.841 17.3977H5.06621Z"
+                              fill="black"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M26.5826 57C25.3521 57 24.3546 56.0003 24.3546 54.7671V32.8107C24.3546 31.5775 25.3521 30.5778 26.5826 30.5778H55.8564C57.0869 30.5778 58.0845 31.5775 58.0845 32.8107V54.7671C58.0845 56.0003 57.0869 57 55.8564 57H26.5826ZM27.6348 32.6246C26.9511 32.6246 26.397 33.18 26.397 33.8651V53.7127C26.397 54.3978 26.9511 54.9532 27.6348 54.9532H54.8043C55.4879 54.9532 56.0421 54.3978 56.0421 53.7127V33.8651C56.0421 33.18 55.4879 32.6246 54.8043 32.6246H27.6348Z"
+                              fill="black"></path>
+                    </svg>
+                </use>
+            </div>
+            <div class="device-link__text">Sign in to tracker, TV-board or cashier</div>
+        </div>
+    </a>
+
+
+    <div class="footer">
+        <div class="agreement footer_item">
+            <a class="agreement__link" href="https://cdn.dodopizza.info/files/docs/saas_dodopizzacom_en.pdf"
+               target="_blank" rel="noreferrer noopener nofollow">User agreement</a>
+        </div>
+        <div class="version footer_item">
+            <span class="version__text">Version: 2023.4.490.0, en</span>
+        </div>
+    </div>
+</div>
+</body>
+<script src="/content/app.min.js?v=WNXSThOuJK3H-IFgK3WYgIkwQaxSZzg1pPMNpRI5CeU"></script>
+
+<script src="/content/login.min.js?v=ZkmvOO7nq3lREvsiz5OihEo6qA4Z0ZJi3B9uNmeyIsk"></script>
+
+</html>
