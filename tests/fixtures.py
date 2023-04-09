@@ -2,6 +2,7 @@ import httpx
 import pytest
 
 from dodo_is_auth import DodoISAuthService
+from office_manager import OfficeManagerService
 
 
 @pytest.fixture
@@ -13,6 +14,11 @@ def http_client():
 @pytest.fixture
 def dodo_is_auth(http_client):
     return DodoISAuthService(http_client)
+
+
+@pytest.fixture
+def office_manager(http_client):
+    return OfficeManagerService(http_client)
 
 
 @pytest.fixture
