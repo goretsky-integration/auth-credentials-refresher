@@ -13,3 +13,8 @@ def http_client():
 @pytest.fixture
 def dodo_is_auth(http_client):
     return DodoISAuthService(http_client)
+
+
+@pytest.fixture
+def assert_all_responses_were_requested() -> bool:
+    return False
