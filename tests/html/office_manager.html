@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Менеджер офиса > День</title>
+
+	<meta charset="utf-8">
+
+
+<!-- Crowdin In-Context script -->
+<!-- End Crowdin In-Context script -->
+	<meta content="ru-RU" name="accept-language" />
+
+<!-- <Favicons> -->
+<link rel="apple-touch-icon" sizes="57x57" href="/Content/Images/favicon/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="57x57" href="/Content/Images/favicon/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/Content/Images/favicon/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/Content/Images/favicon/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/Content/Images/favicon/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/Content/Images/favicon/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/Content/Images/favicon/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/Content/Images/favicon/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/Content/Images/favicon/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/Content/Images/favicon/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="/Content/Images/favicon/favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="/Content/Images/favicon/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="/Content/Images/favicon/favicon-48x48.png" sizes="48x48" />
+<link rel="icon" type="image/png" href="/Content/Images/favicon/favicon-96x96.png" sizes="96x96">
+<link rel="apple-touch-icon-precomposed" href="/Content/Images/favicon/apple-touch-icon-precomposed.png" />
+<link rel="icon" type="image/png" href="/Content/Images/favicon/android-chrome-72x72.png" sizes="72x72" />
+<link rel="icon" type="image/png" href="/Content/Images/favicon/android-chrome-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="/Content/Images/favicon/android-chrome-144x144.png" sizes="144x144" />
+<link rel="icon" type="image/png" href="/Content/Images/favicon/android-chrome-192x192.png" sizes="192x192" />
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileImage" content="/Content/Images/favicon/mstile-144x144.png" />
+<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-config" content="/Content/Images/favicon/browserconfig.xml" />
+<link rel="mask-icon" href="/Content/Images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<!-- </Favicons> -->
+	<link href="/bundle/DodoUI.css?v=999.13516" rel="stylesheet" />
+	<link href="/Content/Css/areas/officemanager/officemanager.css?v=999.13516" rel="stylesheet" type="text/css"/>
+	<link href="/Content/OfficeManager/css/device.css?v=999.13516" rel="stylesheet" type="text/css" media="only screen and (max-device-width: 480px)"/>
+	<link href="/Content/OfficeManager/css/smoothness/jquery-ui-1.10.3.custom.css?v=999.13516" rel="stylesheet" type="text/css"/>
+	<link href="/Content/OfficeManager/css/main.css?v=999.13516" rel="stylesheet" type="text/css"/>
+	<link href="/Content/paginate.css?v=999.13516" rel="stylesheet" type="text/css"/>
+	<link href="/Content/OfficeManager/css/temporaryNew.css?v=999.13516" rel="stylesheet" type="text/css"/>
+
+
+
+
+	<script src="/Scripts/OfficeManager/core.js?v=999.13516" type="text/javascript"></script>
+	<script charset="utf-8" src="/Scripts/jquery-1.9.min.js?v=999.13516" type="text/javascript"></script>
+	<script charset="utf-8" src="/Scripts/jquery.json-2.4.min.js?v=999.13516" type="text/javascript"></script>
+	<script src="/Scripts/jquery-ui-1.10.0.min.js?v=999.13516" type="text/javascript"></script>
+	<script src="/Scripts/jquery.blockUI-2.55.min.js?v=999.13516" type="text/javascript"></script>
+	<script src="/Scripts/jquery.maskedinput-1.3.1.min.js?v=999.13516" type="text/javascript"></script>
+	<script charset="utf-8" src="/Scripts/CommonScripts.js?v=999.13516" type="text/javascript"></script>
+	<script src="/Scripts/jquery.fileDownload.js?v=999.13516" type="text/javascript"></script>
+	<script src="https://kit.fontawesome.com/04d521a327.js" crossorigin="anonymous"></script>
+
+
+	<script src="/bundle/DodoUIplugins.js?v=999.13516" type="text/javascript"></script>
+
+	<script src="/bundle/jqueryDatepickerLocalizationJs.js?v=999.13516" type="text/javascript"></script>
+
+	<script src="/Scripts/bootstrap.js?v=999.13516" type="text/javascript"></script>
+	<script charset="utf-8" src="/Scripts/components/Chart2.js?v=999.13516" type="text/javascript"></script>
+	<script src="/Scripts/components/Chart2-TrackingLinePlugin.js?v=999.13516" type="text/javascript"></script>
+	<script src="/Scripts/moment.js?v=999.13516" type="text/javascript"></script>
+
+
+	<!--[if lt IE 9]><script src="/Scripts/html5allower.js?v=999.13516" type="text/javascript"></script><![endif]-->
+	<!--[if IE 6]><div style="width: 100%; height: 50%; z-index: 999; zoom: 1; background: #fff; text-align: center; padding-top: 50%; font-size: 42px;"><p>Сожалеем, но ваш браузер устарел. Пожалуйста, обновите свой браузер или скачайте другой.</p></div><![endif]-->
+</head>
+
+
+<script>
+	var AngularSettings = {
+		ComponentServiceSettings: {
+			GetMaterialTypesUrl: '/UnitProfile/UnitProfile/GetMaterialTypes',
+            GetUnitsUrl: '/UnitProfile/UnitProfile/Units',
+            GetMinimalShippingUnitsUrl: '/OfficeManager/MaterialTypeTransfer/GetMinimalShippingUnits',
+            GetUnitsForTransferUrl: '/UnitProfile/UnitProfile/UnitsForTransfers',
+			Culture: 'ru-RU'
+		}
+	};
+</script>
+
+<body>
+<div class="all">
+	<div class="wrap">
+
+
+<div class="header_mobilePanel">
+	<span id="menuToggle" class="header_mobileNavIcon">
+		<span id="navigationOpen" class="glyphicon glyphicon-menu-hamburger"></span>
+		<span id="navigationClose" class="glyphicon glyphicon-remove" style="display:none;"></span>
+	</span>
+	<div class="header_role header_role--mobile">Менеджер офиса &ndash; Москва 0</div>
+	<div class="header_mobileProfile">
+
+
+<div class="profileCard_user">
+	<div class="profileCard_link">
+		<span class="profileCard_name">Имя</span>
+		<img src="/Content/Images/person_men.jpg" alt="" />
+	</div>
+	<div class="profileCard">
+		<div class="profileCard_info">
+			<div class="info_user">
+				<h3>Фамилия&nbsp;Имя</h3>
+				<div>om_msk</div>
+				<div>&#x2B;79180000000</div>
+				<div>om_msk@domain.com</div>
+			</div>
+			<div class="info_img">
+				<img src="/Content/Images/person_men.jpg" alt="" />
+			</div>
+		</div>
+		<div class="profileCard_footer">
+			<a class="footer_btn btn_profile" target="_blank">Мой аккаунт</a>
+			<a class="footer_btn btn_exit" href="/Infrastructure/Authenticate/LogOff">Выход</a>
+		</div>
+
+	</div>
+	<script type="text/javascript">
+		$(function () {
+			var $userCard = $('.profileCard_user');
+			$userCard.find('.profileCard_link').on('click', function (ev) {
+				var $card = $userCard.find('.profileCard');
+				$card.toggle();
+
+				ev.stopImmediatePropagation();
+			});
+
+			$(document).on('click', function () {
+				var $card = $userCard.find('.profileCard');
+				if ($card.is(':visible')) {
+					$card.hide();
+				}
+			});
+
+		});
+	</script>
+</div>
+
+	</div>
+</div>
+
+<header class="header">
+	<div class="container">
+		<div class="header_dodoIs">
+			Dodo IS → Менеджер офиса, Москва 0
+		</div>
+		<div class="header_profile hidden-sm hidden-xs">
+
+
+<div class="profileCard_user">
+	<div class="profileCard_link">
+		<span class="profileCard_name">Имя</span>
+		<img src="/Content/Images/person_men.jpg" alt="" />
+	</div>
+	<div class="profileCard">
+		<div class="profileCard_info">
+			<div class="info_user">
+				<h3>Фамилия&nbsp;Имя</h3>
+				<div>om_msk</div>
+				<div>&#x2B;79180000000</div>
+				<div>om_msk@domain.com</div>
+			</div>
+			<div class="info_img">
+				<img src="/Content/Images/person_men.jpg" alt="" />
+			</div>
+		</div>
+		<div class="profileCard_footer">
+			<a class="footer_btn btn_profile" target="_blank">Мой аккаунт</a>
+			<a class="footer_btn btn_exit" href="/Infrastructure/Authenticate/LogOff">Выход</a>
+		</div>
+
+	</div>
+	<script type="text/javascript">
+		$(function () {
+			var $userCard = $('.profileCard_user');
+			$userCard.find('.profileCard_link').on('click', function (ev) {
+				var $card = $userCard.find('.profileCard');
+				$card.toggle();
+
+				ev.stopImmediatePropagation();
+			});
+
+			$(document).on('click', function () {
+				var $card = $userCard.find('.profileCard');
+				if ($card.is(':visible')) {
+					$card.hide();
+				}
+			});
+
+		});
+	</script>
+</div>
+
+		</div>
+		<div id="headerNavigation" class="header_navigation">
+
+
+<script type="text/javascript">
+	var message_preparingBuildReport = 'Идет построение отчета,ожидайте ...';
+	var massage_errorBuildReport = 'При построении отчета возникли ошибки.';
+</script>
+
+<ul class="navigation">
+			<li id="OperationalStatisticsMenuItemLink" class="navigation_item">
+				<a id="OperationalStatisticsMenuItemLink" href="/OfficeManager/OperationalStatistics"
+					class="
+						navigation_link
+
+						"
+					>
+					<span class="navigation_linkBorderBlock">День</span>
+				</a>
+			</li>
+			<li id="MonthlyStatisticsMenuItemLink" class="navigation_item">
+				<a id="MonthlyStatisticsMenuItemLink" href="/OfficeManager/MonthlyStatistics"
+					class="
+						navigation_link
+
+						"
+					>
+					<span class="navigation_linkBorderBlock">Месяц</span>
+				</a>
+			</li>
+			<li id="ShiftScheduleMenuItemLink" class="navigation_item">
+				<a id="ShiftScheduleMenuItemLink" href="/OfficeManager/ShiftSchedule/ScheduleDay"
+					class="
+						navigation_link
+
+						"
+					>
+					<span class="navigation_linkBorderBlock">График</span>
+				</a>
+			</li>
+			<li id="StaffMenuItemLink" class="navigation_item">
+				<a id="StaffMenuItemLink" href="/OfficeManager/EmployeeStatistics/EmployeeStatistics"
+					class="
+						navigation_link
+
+						"
+					>
+					<span class="navigation_linkBorderBlock">Команда</span>
+				</a>
+			</li>
+			<li id="ReportsMenuItemLink" class="navigation_item">
+				<a id="ReportsMenuItemLink" href="/Reports/LabourCost"
+					class="
+						navigation_link
+
+						"
+					>
+					<span class="navigation_linkBorderBlock">Отчёты</span>
+				</a>
+			</li>
+			<li id="MetricsMenuItemLink" class="navigation_item">
+				<a id="MetricsMenuItemLink" href="/OfficeManager/FinanceStatistic"
+					class="
+						navigation_link
+
+						"
+					>
+					<span class="navigation_linkBorderBlock">Метрики</span>
+				</a>
+			</li>
+			<li id="InventoryManagementMenuItemLink" class="navigation_item">
+				<a id="InventoryManagementMenuItemLink" href="/OfficeManager/Supply"
+					class="
+						navigation_link
+
+						"
+					>
+					<span class="navigation_linkBorderBlock">Учёт</span>
+				</a>
+			</li>
+			<li id="MarketingMenuItemLink" class="navigation_item">
+				<a id="MarketingMenuItemLink" href="/OfficeManager/AverageCheck"
+					class="
+						navigation_link
+
+						"
+					>
+					<span class="navigation_linkBorderBlock">Маркетинг</span>
+				</a>
+			</li>
+			<li id="SettingsMenuItemLink" class="navigation_item">
+				<a id="SettingsMenuItemLink" href="/OfficeManager/ZoneSettings/ZoneSettings"
+					class="
+						navigation_link
+
+						"
+					>
+					<span class="navigation_linkBorderBlock">Настройки</span>
+				</a>
+			</li>
+			<li id="DodoNewsMenuItemLink" class="navigation_item">
+				<a id="DodoNewsMenuItemLink" href="/Infrastructure/Redirect/RedirectToDodoInfo"
+					class="
+						navigation_link
+						navigation_link--special
+						"
+					target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; onclick=&quot;yaCounter40045170.reachGoal(&#x27;GoToKnowledgeBase&#x27;); return true;&quot;>
+					<span class="navigation_linkBorderBlock">Новости Додо</span>
+				</a>
+			</li>
+			<li id="AnalyticsMenuItemLink" class="navigation_item">
+				<a id="AnalyticsMenuItemLink" href="/OfficeManager/Analytics"
+					class="
+						navigation_link
+
+						"
+					>
+					<span class="navigation_linkBorderBlock">Аналитика (бета)</span>
+				</a>
+			</li>
+</ul>
+		</div>
+	</div>
+</header>
+<div class="header_layout hidden-lg hidden-md"></div>
+
+<script type="text/javascript">
+	var menuItemWrap = $('#' + 'OperationalStatisticsMenuItem' + 'Wrap');
+	if (menuItemWrap) {
+		menuItemWrap.addClass('navigation_item--active');
+	}
+
+	var menuItemLink = $('#' + 'OperationalStatisticsMenuItem' + 'Link');
+	if (menuItemLink) {
+		menuItemLink.href = '#';
+		menuItemLink.addClass('navigation_link--active');
+	}
+
+	$(document).ready(function () {
+		$("#menuToggle").on("click touch", function () {
+			$(".header, .header_layout").toggle();
+			$("#navigationOpen").toggle();
+			$("#navigationClose").toggle();
+			$("body").toggleClass("navigationOpen");
+			//$(".navigation").trigger("touch");
+		});
+
+		$(".header_layout").on("click touch", function () {
+			$("#navigationOpen").show();
+			$("#navigationClose").hide();
+			$(".header, .header_layout").hide();
+			$("body").removeClass("navigationOpen");
+		});
+	});
+
+	$(document).resize(function () {
+		if (document.width >= 768) {
+			$("body").removeClass("navigationOpen");
+		}
+	});
+</script>
+
+		<section class="content">
+			<section class="leftColumn">
+
+
+	<ul id="StaffMenuItemSubMenu" style="display:none" class="catMenu">
+				<li id="EmployeeStatisticsSubMenuItemWrap" class="catMenu_item catMenu_item-first ">
+					<a id="EmployeeStatisticsSubMenuItemLink" href="/OfficeManager/EmployeeStatistics/EmployeeStatistics"
+
+						class="catMenu_link">Общая информация</a>
+				</li>
+				<li id="StaffListSubMenuItemWrap" class="catMenu_item  ">
+					<a id="StaffListSubMenuItemLink" href="/OfficeManager/EmployeeList"
+
+						class="catMenu_link">Сотрудники</a>
+				</li>
+				<li id="EmployeesFlowSubMenuItemWrap" class="catMenu_item  ">
+					<a id="EmployeesFlowSubMenuItemLink" href="/OfficeManager/EmployeeStatistics/EmployeeTurnover"
+
+						class="catMenu_link">Текучесть</a>
+				</li>
+				<li id="StaffTrainingReportSubMenuItemWrap" class="catMenu_item  ">
+					<a id="StaffTrainingReportSubMenuItemLink" href="/Infrastructure/Redirect/RedirectToTrainingReport"
+						target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;
+						class="catMenu_link">Результаты тестов</a>
+				</li>
+				<li id="BadgesSubMenuItemWrap" class="catMenu_item  catMenu_item-last">
+					<a id="BadgesSubMenuItemLink" href="/OfficeManager/Badges"
+
+						class="catMenu_link">Бейджи</a>
+				</li>
+				<li id="FeatureCardSubMenuItemWrap" class="catMenu_item catMenu_item-first ">
+					<a id="FeatureCardSubMenuItemLink" href="/OfficeManager/FeatureCard/FeatureCard"
+
+						class="catMenu_link">Карта возможностей</a>
+				</li>
+				<li id="SalaryPremiumsSubMenuItemWrap" class="catMenu_item  ">
+					<a id="SalaryPremiumsSubMenuItemLink" href="/OfficeManager/SalaryRates/SalaryPremiums"
+
+						class="catMenu_link">Премии</a>
+				</li>
+				<li id="EmployeeShiftSettingsSubMenuItemWrap" class="catMenu_item  catMenu_item-last">
+					<a id="EmployeeShiftSettingsSubMenuItemLink" href="/OfficeManager/EmployeeShiftSettings"
+
+						class="catMenu_link">Корректировка смен</a>
+				</li>
+				<li id="ApplicantsStatisticReportSubMenuItemWrap" class="catMenu_item catMenu_item-first ">
+					<a id="ApplicantsStatisticReportSubMenuItemLink" href="/OfficeManager/Applicants/ApplicantsStatistic"
+
+						class="catMenu_link">Статистика по анкетам</a>
+				</li>
+				<li id="ApplicantsInboxSubMenuItemWrap" class="catMenu_item  ">
+					<a id="ApplicantsInboxSubMenuItemLink" href="/OfficeManager/Applicants/Inbox"
+
+						class="catMenu_link">Анкеты</a>
+				</li>
+				<li id="VacancyListSubMenuItemWrap" class="catMenu_item  catMenu_item-last">
+					<a id="VacancyListSubMenuItemLink" href="/OfficeManager/Applicants/VacancyList"
+
+						class="catMenu_link">Вакансии</a>
+				</li>
+	</ul>
+	<ul id="ReportsMenuItemSubMenu" style="display:none" class="catMenu">
+				<li id="ReportLabourCostSubMenuItemWrap" class="catMenu_item catMenu_item-first ">
+					<a id="ReportLabourCostSubMenuItemLink" href="/Reports/LabourCost"
+
+						class="catMenu_link">Kitchen Cost</a>
+				</li>
+				<li id="ProfitAndLossesSubMenuItemWrap" class="catMenu_item  ">
+					<a id="ProfitAndLossesSubMenuItemLink" href="/Reports/ProfitAndLossesV2"
+
+						class="catMenu_link">P&amp;L</a>
+				</li>
+				<li id="UnitSummarySubMenuItemWrap" class="catMenu_item  ">
+					<a id="UnitSummarySubMenuItemLink" href="/Reports/UnitSummary"
+
+						class="catMenu_link">Unit summary</a>
+				</li>
+				<li id="BonusActionActivitySubMenuItemWrap" class="catMenu_item  ">
+					<a id="BonusActionActivitySubMenuItemLink" href="/Reports/BonusActionActivity"
+
+						class="catMenu_link">Активность по акциям</a>
+				</li>
+				<li id="SalesByDeliverySectorsSubMenuItemWrap" class="catMenu_item  ">
+					<a id="SalesByDeliverySectorsSubMenuItemLink" href="/Reports/SalesByDeliverySectors"
+
+						class="catMenu_link">Активность секторов доставки</a>
+				</li>
+				<li id="AnalysisOfRepeatOrdersSubMenuItemWrap" class="catMenu_item  ">
+					<a id="AnalysisOfRepeatOrdersSubMenuItemLink" href="/Reports/AnalysisOfRepeatOrders"
+
+						class="catMenu_link">Анализ повторных заказов</a>
+				</li>
+				<li id="LoyaltyReportSubMenuItemWrap" class="catMenu_item  ">
+					<a id="LoyaltyReportSubMenuItemLink" href="/Reports/Loyalty"
+
+						class="catMenu_link">Бонусная программа</a>
+				</li>
+				<li id="LoyaltyProfitReportSubMenuItemWrap" class="catMenu_item  ">
+					<a id="LoyaltyProfitReportSubMenuItemLink" href="/Reports/LoyaltyProfit"
+
+						class="catMenu_link">Бонусная программа - операции с Додо-рублями</a>
+				</li>
+				<li id="MostRichClientsSubMenuItemWrap" class="catMenu_item  ">
+					<a id="MostRichClientsSubMenuItemLink" href="/Reports/MostRichClients"
+
+						class="catMenu_link">Бонусная программа - топ клиентов</a>
+				</li>
+				<li id="LoyaltyRestaurantReportSubMenuItemWrap" class="catMenu_item  ">
+					<a id="LoyaltyRestaurantReportSubMenuItemLink" href="/Reports/LoyaltyRestaurant"
+
+						class="catMenu_link">Бонусная программа в ресторане</a>
+				</li>
+				<li id="ShopWindowPauseStatisticSubMenuItemWrap" class="catMenu_item  ">
+					<a id="ShopWindowPauseStatisticSubMenuItemLink" href="/Reports/ShopWindowPauseStatistic"
+
+						class="catMenu_link">Витрина - простой</a>
+				</li>
+				<li id="ShopWindowRealPriceSubMenuItemWrap" class="catMenu_item  ">
+					<a id="ShopWindowRealPriceSubMenuItemLink" href="/Reports/ShopWindowRealPrice"
+
+						class="catMenu_link">Витрина - реальная цена</a>
+				</li>
+				<li id="ShopwindowDebitingReportSubMenuItemWrap" class="catMenu_item  ">
+					<a id="ShopwindowDebitingReportSubMenuItemLink" href="/Reports/ShopwindowDebiting"
+
+						class="catMenu_link">Витрина - списание</a>
+				</li>
+				<li id="OrderHandoverTimeSubMenuItemWrap" class="catMenu_item  ">
+					<a id="OrderHandoverTimeSubMenuItemLink" href="/Reports/OrderHandoverTime"
+
+						class="catMenu_link">Время выдачи заказа</a>
+				</li>
+				<li id="ReportProductionTimeSubMenuItemWrap" class="catMenu_item  ">
+					<a id="ReportProductionTimeSubMenuItemLink" href="/Reports/ProductionTime"
+
+						class="catMenu_link">Время изготовления</a>
+				</li>
+				<li id="ReportRevenueSubMenuItemWrap" class="catMenu_item  ">
+					<a id="ReportRevenueSubMenuItemLink" href="/Reports/Revenue"
+
+						class="catMenu_link">Выручка</a>
+				</li>
+				<li id="ExtraTimeReportSubMenuItemWrap" class="catMenu_item  ">
+					<a id="ExtraTimeReportSubMenuItemLink" href="/Reports/TimeReport"
+
+						class="catMenu_link">Дополнительное время</a>
+				</li>
+				<li id="DefectiveProductsSubMenuItemWrap" class="catMenu_item  ">
+					<a id="DefectiveProductsSubMenuItemLink" href="/Reports/DefectiveProducts"
+
+						class="catMenu_link">Забракованные продукты</a>
+				</li>
+				<li id="ReportLoadCouriersSubMenuItemWrap" class="catMenu_item  ">
+					<a id="ReportLoadCouriersSubMenuItemLink" href="/Reports/ProductivityCouriersStatistic"
+
+						class="catMenu_link">Загруженность курьеров</a>
+				</li>
+				<li id="PizzeriaLoadSubMenuItemWrap" class="catMenu_item  ">
+					<a id="PizzeriaLoadSubMenuItemLink" href="/Reports/PizzeriaLoad"
+
+						class="catMenu_link">Загруженность пиццерии</a>
+				</li>
+				<li id="OrdersSubMenuItemWrap" class="catMenu_item  ">
+					<a id="OrdersSubMenuItemLink" href="/Reports/Orders"
+
+						class="catMenu_link">Заказы</a>
+				</li>
+				<li id="ClientOrdersSubMenuItemWrap" class="catMenu_item  ">
+					<a id="ClientOrdersSubMenuItemLink" href="/Reports/ClientOrders"
+
+						class="catMenu_link">Заказы клиента</a>
+				</li>
+				<li id="SalaryReportSubMenuItemWrap" class="catMenu_item  ">
+					<a id="SalaryReportSubMenuItemLink" href="/Reports/Salary"
+
+						class="catMenu_link">Заработная плата</a>
+				</li>
+				<li id="DeliverySectorsReportSubMenuItemWrap" class="catMenu_item  ">
+					<a id="DeliverySectorsReportSubMenuItemLink" href="/Reports/DeliverySectors"
+
+						class="catMenu_link">Зона доставки</a>
+				</li>
+				<li id="CouriersOrdersSubMenuItemWrap" class="catMenu_item  ">
+					<a id="CouriersOrdersSubMenuItemLink" href="/Reports/CouriersOrders"
+
+						class="catMenu_link">Курьеры - заказы</a>
+				</li>
+				<li id="CourierRatingV2SubMenuItemWrap" class="catMenu_item  ">
+					<a id="CourierRatingV2SubMenuItemLink" href="/Reports/CourierRatingV2"
+
+						class="catMenu_link">Курьеры - рейтинг</a>
+				</li>
+				<li id="EmployeeFoodsSubMenuItemWrap" class="catMenu_item  ">
+					<a id="EmployeeFoodsSubMenuItemLink" href="/Reports/EmployeeFoods"
+
+						class="catMenu_link">Питание на смене</a>
+				</li>
+				<li id="CourierTasksSubMenuItemWrap" class="catMenu_item  ">
+					<a id="CourierTasksSubMenuItemLink" href="/Reports/CourierTasks"
+
+						class="catMenu_link">Поездки курьеров</a>
+				</li>
+				<li id="ReportPopularityProductsSubMenuItemWrap" class="catMenu_item  ">
+					<a id="ReportPopularityProductsSubMenuItemLink" href="/Reports/PopularityProducts"
+
+						class="catMenu_link">Популярность продуктов</a>
+				</li>
+				<li id="ReportBonusActionsSubMenuItemWrap" class="catMenu_item  ">
+					<a id="ReportBonusActionsSubMenuItemLink" href="/Reports/BonusActions"
+
+						class="catMenu_link">Применение автоматических акций</a>
+				</li>
+				<li id="ReportProductsSaleSubMenuItemWrap" class="catMenu_item  ">
+					<a id="ReportProductsSaleSubMenuItemLink" href="/Reports/ProductsSale"
+
+						class="catMenu_link">Продажи</a>
+				</li>
+				<li id="ReportComboSaleSubMenuItemWrap" class="catMenu_item  ">
+					<a id="ReportComboSaleSubMenuItemLink" href="/Reports/ComboSalesV2"
+
+						class="catMenu_link">Продажи комбо</a>
+				</li>
+				<li id="ReportSaleByCashBoxSessionsSubMenuItemWrap" class="catMenu_item  ">
+					<a id="ReportSaleByCashBoxSessionsSubMenuItemLink" href="/Reports/SaleByCashBoxSessions"
+
+						class="catMenu_link">Продажи по кассовым сменам</a>
+				</li>
+				<li id="ProductivitySubMenuItemWrap" class="catMenu_item  ">
+					<a id="ProductivitySubMenuItemLink" href="/Reports/Productivity"
+
+						class="catMenu_link">Производительность</a>
+				</li>
+				<li id="ReportExpressProductsSubMenuItemWrap" class="catMenu_item  ">
+					<a id="ReportExpressProductsSubMenuItemLink" href="/Reports/ExpressProductsStatistics"
+
+						class="catMenu_link">Просроченные экспресс-продукты</a>
+				</li>
+				<li id="ReportConsumptionProductsSubMenuItemWrap" class="catMenu_item  ">
+					<a id="ReportConsumptionProductsSubMenuItemLink" href="/Reports/ConsumptionProducts"
+
+						class="catMenu_link">Расход продуктов</a>
+				</li>
+				<li id="PromoCodeUsedSubMenuItemWrap" class="catMenu_item  ">
+					<a id="PromoCodeUsedSubMenuItemLink" href="/Reports/PromoCodeUsed"
+
+						class="catMenu_link">Расход промо-кодов</a>
+				</li>
+				<li id="DoughReportSubMenuItemWrap" class="catMenu_item  ">
+					<a id="DoughReportSubMenuItemLink" href="/Reports/Dough"
+
+						class="catMenu_link">Расход теста</a>
+				</li>
+				<li id="CalculateSMSSubMenuItemWrap" class="catMenu_item  ">
+					<a id="CalculateSMSSubMenuItemLink" href="/Reports/CalculateSMS"
+
+						class="catMenu_link">Расчёты по смс</a>
+				</li>
+				<li id="CallCenterOrderStatisticSubMenuItemWrap" class="catMenu_item  ">
+					<a id="CallCenterOrderStatisticSubMenuItemLink" href="/Reports/CallCenterOrderStatistic"
+
+						class="catMenu_link">Расчёты с КЦ</a>
+				</li>
+				<li id="CourierRatingSubMenuItemWrap" class="catMenu_item  ">
+					<a id="CourierRatingSubMenuItemLink" href="/Reports/CourierRating"
+
+						class="catMenu_link">Рейтинг курьеров</a>
+				</li>
+				<li id="BeingLateCertificatesSubMenuItemWrap" class="catMenu_item  ">
+					<a id="BeingLateCertificatesSubMenuItemLink" href="/Reports/BeingLateCertificates"
+
+						class="catMenu_link">Сертификаты за опоздание</a>
+				</li>
+				<li id="AverageOrderAcceptTimeSubMenuItemWrap" class="catMenu_item  ">
+					<a id="AverageOrderAcceptTimeSubMenuItemLink" href="/Reports/AverageOrderAcceptTime"
+
+						class="catMenu_link">Среднее время принятия заказа</a>
+				</li>
+				<li id="AverageCheckSubMenuItemWrap" class="catMenu_item  ">
+					<a id="AverageCheckSubMenuItemLink" href="/Reports/AverageCheck"
+
+						class="catMenu_link">Средний чек</a>
+				</li>
+				<li id="RestaurantAppShareSubMenuItemWrap" class="catMenu_item  ">
+					<a id="RestaurantAppShareSubMenuItemLink" href="/Reports/RestaurantAppShare"
+
+						class="catMenu_link">Статистика заказов в ресторане</a>
+				</li>
+				<li id="DeliveryStatisticSubMenuItemWrap" class="catMenu_item  ">
+					<a id="DeliveryStatisticSubMenuItemLink" href="/Reports/DeliveryStatistic"
+
+						class="catMenu_link">Статистика по доставке</a>
+				</li>
+				<li id="CustomizationStatisticSubMenuItemWrap" class="catMenu_item  ">
+					<a id="CustomizationStatisticSubMenuItemLink" href="/Reports/CustomizationStatistic"
+
+						class="catMenu_link">Статистика по кастомизации</a>
+				</li>
+				<li id="ClientsStatisticSubMenuItemWrap" class="catMenu_item  ">
+					<a id="ClientsStatisticSubMenuItemLink" href="/Reports/ClientsStatistic"
+
+						class="catMenu_link">Статистика по клиентам</a>
+				</li>
+				<li id="CourierStatisticSubMenuItemWrap" class="catMenu_item  ">
+					<a id="CourierStatisticSubMenuItemLink" href="/Reports/CourierStatistic"
+
+						class="catMenu_link">Статистика по курьерам</a>
+				</li>
+				<li id="ReportStopSaleSubMenuItemWrap" class="catMenu_item  ">
+					<a id="ReportStopSaleSubMenuItemLink" href="/Reports/StopSaleStatistic"
+
+						class="catMenu_link">Стоп-продажи</a>
+				</li>
+				<li id="HeatOrdersMapSubMenuItemWrap" class="catMenu_item  ">
+					<a id="HeatOrdersMapSubMenuItemLink" href="/Reports/HeatMaps"
+
+						class="catMenu_link">Тепловая карта заказов</a>
+				</li>
+				<li id="TimeReportSubMenuItemWrap" class="catMenu_item  ">
+					<a id="TimeReportSubMenuItemLink" href="/Reports/ActualTime"
+
+						class="catMenu_link">Фактическое время</a>
+				</li>
+				<li id="EffectiveApplicantsSourceSubMenuItemWrap" class="catMenu_item  catMenu_item-last">
+					<a id="EffectiveApplicantsSourceSubMenuItemLink" href="/Reports/EffectiveApplicantsSource"
+
+						class="catMenu_link">Эффективность источников найма</a>
+				</li>
+	</ul>
+	<ul id="MetricsMenuItemSubMenu" style="display:none" class="catMenu">
+				<li id="KPI_FinanceSubMenuItemWrap" class="catMenu_item catMenu_item-first ">
+					<a id="KPI_FinanceSubMenuItemLink" href="/OfficeManager/FinanceStatistic"
+
+						class="catMenu_link">Показатели</a>
+				</li>
+				<li id="PL_FinanceSubMenuItemWrap" class="catMenu_item  catMenu_item-last">
+					<a id="PL_FinanceSubMenuItemLink" href="/OfficeManager/ProfitAndLossesV2"
+
+						class="catMenu_link">P&amp;L</a>
+				</li>
+				<li id="KPI_RatingAverageRevenueSubMenuItemWrap" class="catMenu_item catMenu_item-first ">
+					<a id="KPI_RatingAverageRevenueSubMenuItemLink" href="/OfficeManager/FinanceStatistic/RatingAverageRevenue"
+
+						class="catMenu_link">Выручка</a>
+				</li>
+				<li id="KPI_RatingRevenueInHourSubMenuItemWrap" class="catMenu_item  catMenu_item-last">
+					<a id="KPI_RatingRevenueInHourSubMenuItemLink" href="/OfficeManager/FinanceStatistic/RevenueInHourOnEmployee"
+
+						class="catMenu_link">Производительность</a>
+				</li>
+				<li id="KPI_RatingLabourCostSubMenuItemWrap" class="catMenu_item catMenu_item-first ">
+					<a id="KPI_RatingLabourCostSubMenuItemLink" href="/OfficeManager/FinanceStatistic/RatingLabourCost"
+
+						class="catMenu_link">KC</a>
+				</li>
+				<li id="ProfitAndLossIndicatorsSubMenuItemWrap" class="catMenu_item  catMenu_item-last">
+					<a id="ProfitAndLossIndicatorsSubMenuItemLink" href="/OfficeManager/FinanceStatistic/ProfitAndLossV2Indicators"
+
+						class="catMenu_link">Показатели P&amp;L</a>
+				</li>
+	</ul>
+	<ul id="InventoryManagementMenuItemSubMenu" style="display:none" class="catMenu">
+				<li id="LossesAndExceesSubMenuItemWrap" class="catMenu_item catMenu_item-first ">
+					<a id="LossesAndExceesSubMenuItemLink" href="/InventoryManager/LossesAndExcees"
+
+						class="catMenu_link">Потери и избыток</a>
+				</li>
+				<li id="ConsumablesSubMenuItemWrap" class="catMenu_item  ">
+					<a id="ConsumablesSubMenuItemLink" href="/InventoryManager/Consumables"
+
+						class="catMenu_link">Расходные материалы</a>
+				</li>
+				<li id="CostAndUCSubMenuItemWrap" class="catMenu_item  ">
+					<a id="CostAndUCSubMenuItemLink" href="/InventoryManager/CostAndUCV3"
+
+						class="catMenu_link">Себестоимость и UnitCost</a>
+				</li>
+				<li id="StockBalanceSubMenuItemWrap" class="catMenu_item  catMenu_item-last">
+					<a id="StockBalanceSubMenuItemLink" href="/OfficeManager/StockBalance"
+
+						class="catMenu_link">Складские остатки</a>
+				</li>
+				<li id="AuditedInventorySubMenuItemWrap" class="catMenu_item catMenu_item-first ">
+					<a id="AuditedInventorySubMenuItemLink" href="/OfficeManager/RevisionRemains"
+
+						class="catMenu_link">Остатки по ревизии</a>
+				</li>
+				<li id="MaterialConsumptionSubMenuItemWrap" class="catMenu_item  ">
+					<a id="MaterialConsumptionSubMenuItemLink" href="/OfficeManager/MaterialConsumption"
+
+						class="catMenu_link">Расход сырья</a>
+				</li>
+				<li id="DebitingSubMenuItemWrap" class="catMenu_item  ">
+					<a id="DebitingSubMenuItemLink" href="/OfficeManager/Debiting"
+
+						class="catMenu_link">Списания</a>
+				</li>
+				<li id="MaterialTransferSubMenuItemWrap" class="catMenu_item  ">
+					<a id="MaterialTransferSubMenuItemLink" href="/OfficeManager/MaterialTypeTransfer"
+
+						class="catMenu_link">Перемещения</a>
+				</li>
+				<li id="SupplySubMenuItemWrap" class="catMenu_item  ">
+					<a id="SupplySubMenuItemLink" href="/OfficeManager/Supply"
+
+						class="catMenu_link">Приходы</a>
+				</li>
+				<li id="StockDeliveryCalculationSubMenuItemWrap" class="catMenu_item  ">
+					<a id="StockDeliveryCalculationSubMenuItemLink" href="/OfficeManager/StockDeliveryCalculation"
+
+						class="catMenu_link">Расчёт заказа сырья</a>
+				</li>
+				<li id="MakingPrepsSubMenuItemWrap" class="catMenu_item  ">
+					<a id="MakingPrepsSubMenuItemLink" href="/OfficeManager/MakingPreps"
+
+						class="catMenu_link">Нормы заготовок сырья</a>
+				</li>
+				<li id="ProductionSubMenuItemWrap" class="catMenu_item  catMenu_item-last">
+					<a id="ProductionSubMenuItemLink" href="/OfficeManager/Production"
+
+						class="catMenu_link">Производство</a>
+				</li>
+				<li id="MaterialTypeTransferSetupSubMenuItemWrap" class="catMenu_item catMenu_item-first ">
+					<a id="MaterialTypeTransferSetupSubMenuItemLink" href="/OfficeManager/MaterialTypeTransferSetup"
+
+						class="catMenu_link">Настройка перемещений</a>
+				</li>
+				<li id="InventoryZonesSubMenuItemWrap" class="catMenu_item  ">
+					<a id="InventoryZonesSubMenuItemLink" href="/OfficeManager/InventorySettings"
+
+						class="catMenu_link">Настройка ревизии</a>
+				</li>
+				<li id="MeasurementsSubMenuItemWrap" class="catMenu_item  ">
+					<a id="MeasurementsSubMenuItemLink" href="/InventoryManager/MaterialMeasurement"
+
+						class="catMenu_link">Замеры</a>
+				</li>
+				<li id="SuppliersAndMaterialsSubMenuItemWrap" class="catMenu_item  ">
+					<a id="SuppliersAndMaterialsSubMenuItemLink" href="/InventoryManager/Suppliers"
+
+						class="catMenu_link">Поставщики и cырьё</a>
+				</li>
+				<li id="MaterialTypesSubMenuItemWrap" class="catMenu_item  ">
+					<a id="MaterialTypesSubMenuItemLink" href="/InventoryManager/MaterialTypes"
+
+						class="catMenu_link">Упаковки</a>
+				</li>
+				<li id="ContainersSubMenuItemWrap" class="catMenu_item  catMenu_item-last">
+					<a id="ContainersSubMenuItemLink" href="/InventoryManager/Containers"
+
+						class="catMenu_link">Тары</a>
+				</li>
+	</ul>
+	<ul id="MarketingMenuItemSubMenu" style="display:none" class="catMenu">
+				<li id="AverageCheckStatisticsSubMenuItemWrap" class="catMenu_item catMenu_item-first catMenu_item-last">
+					<a id="AverageCheckStatisticsSubMenuItemLink" href="/OfficeManager/AverageCheck"
+
+						class="catMenu_link">Средний чек</a>
+				</li>
+				<li id="ClientsStatisticsSubMenuItemWrap" class="catMenu_item catMenu_item-first ">
+					<a id="ClientsStatisticsSubMenuItemLink" href="/OfficeManager/ClientsStatistics"
+
+						class="catMenu_link">Структура клиентской базы</a>
+				</li>
+				<li id="OrdersCountSubMenuItemWrap" class="catMenu_item  catMenu_item-last">
+					<a id="OrdersCountSubMenuItemLink" href="/OfficeManager/OrdersCount"
+
+						class="catMenu_link">Количество заказов</a>
+				</li>
+	</ul>
+	<ul id="SettingsMenuItemSubMenu" style="display:none" class="catMenu">
+				<li id="ZoneSettingsSubMenuItemWrap" class="catMenu_item catMenu_item-first ">
+					<a id="ZoneSettingsSubMenuItemLink" href="/OfficeManager/ZoneSettings/ZoneSettings"
+
+						class="catMenu_link">Настройка пиццерии</a>
+				</li>
+				<li id="ManagerSettingsSubMenuItemWrap" class="catMenu_item  catMenu_item-last">
+					<a id="ManagerSettingsSubMenuItemLink" href="/OfficeManager/ManagerSettings/ManagerSettings"
+
+						class="catMenu_link">Контакты руководителей</a>
+				</li>
+				<li id="ShiftSettingsSubMenuItemWrap" class="catMenu_item catMenu_item-first ">
+					<a id="ShiftSettingsSubMenuItemLink" href="/OfficeManager/ShiftSettings/ShiftSettings"
+
+						class="catMenu_link">Параметры смен</a>
+				</li>
+				<li id="SalaryRatesSubMenuItemWrap" class="catMenu_item  ">
+					<a id="SalaryRatesSubMenuItemLink" href="/OfficeManager/SalaryRates/SalaryRates"
+
+						class="catMenu_link">Ставки сотрудников</a>
+				</li>
+				<li id="ExperienceBonusRatesSubMenuItemWrap" class="catMenu_item  ">
+					<a id="ExperienceBonusRatesSubMenuItemLink" href="/OfficeManager/ExperienceBonusRates"
+
+						class="catMenu_link">Премия за стаж</a>
+				</li>
+				<li id="SalaryNightFactorsSubMenuItemWrap" class="catMenu_item  ">
+					<a id="SalaryNightFactorsSubMenuItemLink" href="/OfficeManager/SalaryRates/SalaryNightFactors"
+
+						class="catMenu_link">Ночной коэффициент</a>
+				</li>
+				<li id="SalaryHolidayFactorsSubMenuItemWrap" class="catMenu_item  ">
+					<a id="SalaryHolidayFactorsSubMenuItemLink" href="/OfficeManager/SalaryRates/SalaryHolidayFactors"
+
+						class="catMenu_link">Календарь особых дней</a>
+				</li>
+				<li id="SalaryTaxesSubMenuItemWrap" class="catMenu_item  catMenu_item-last">
+					<a id="SalaryTaxesSubMenuItemLink" href="/OfficeManager/SalaryRates/SalaryTaxes"
+
+						class="catMenu_link">Налоговый коэффициент</a>
+				</li>
+				<li id="StaffMealsSetupSubMenuItemWrap" class="catMenu_item catMenu_item-first ">
+					<a id="StaffMealsSetupSubMenuItemLink" href="/OfficeManager/StaffMealsSetup"
+
+						class="catMenu_link">Настройка обедов</a>
+				</li>
+				<li id="ProductivityNormsSubMenuItemWrap" class="catMenu_item  catMenu_item-last">
+					<a id="ProductivityNormsSubMenuItemLink" href="/OfficeManager/ProductivityNorms/ProductivityNorms"
+
+						class="catMenu_link">Нормы производительности</a>
+				</li>
+				<li id="TargetsOnMonthSettingsSubMenuItemWrap" class="catMenu_item catMenu_item-first ">
+					<a id="TargetsOnMonthSettingsSubMenuItemLink" href="/OfficeManager/Targets/TargetsOnMonthSettings"
+
+						class="catMenu_link">Цели на месяц</a>
+				</li>
+				<li id="TargetsOnYearSettingsSubMenuItemWrap" class="catMenu_item  catMenu_item-last">
+					<a id="TargetsOnYearSettingsSubMenuItemLink" href="/OfficeManager/Targets/TargetsOnYearSettings"
+
+						class="catMenu_link">Цели на год</a>
+				</li>
+				<li id="ManagersTabletSubMenuItemWrap" class="catMenu_item catMenu_item-first catMenu_item-last">
+					<a id="ManagersTabletSubMenuItemLink" href="/OfficeManager/ManagersTablet/ManagersTablet"
+
+						class="catMenu_link">Manager&#x27;s Tablet</a>
+				</li>
+	</ul>
+
+			</section>
+
+
+
+
+<div class="container">
+	<div class="content-no-offset">
+		<div id="stopSaleInformation">
+
+		</div>
+		<div class="row">
+			<div class="col-md-2 offset-bottom-10">
+
+
+	<select id="unitId"
+			name="unitId"
+			class="form-control selectpicker"
+
+			data-selected-text-format="count"
+			data-live-search="true"
+	        data-actions-box="false"
+			data-count-selected-text="Выбрано {0}"
+			data-select-all-text="Выбрать всё "
+			data-deselect-all-text="Очистить"
+			data-none-results-text="Ничего не найдено"
+			title="Выберите отдел">
+				<optgroup label="Москва 0">
+						<option value="416" departmentId="59" selected>
+							Москва 0-1
+						</option>
+						<option value="616" departmentId="59" >
+							Москва 0-2
+						</option>
+						<option value="595" departmentId="59" >
+							Москва 0-3
+						</option>
+						<option value="598" departmentId="59" >
+							Москва 0-4
+						</option>
+						<option value="599" departmentId="59" >
+							Москва 0-5
+						</option>
+						<option value="600" departmentId="59" >
+							Москва 0-6
+						</option>
+						<option value="601" departmentId="59" >
+							Москва 0-7
+						</option>
+						<option value="612" departmentId="59" >
+							Москва 0-8
+						</option>
+						<option value="613" departmentId="59" >
+							Москва 0-9
+						</option>
+						<option value="614" departmentId="59" >
+							Москва 0-10
+						</option>
+						<option value="526" departmentId="59" >
+							Москва 0-11
+						</option>
+						<option value="615" departmentId="59" >
+							Москва 0-12
+						</option>
+						<option value="655" departmentId="59" >
+							Москва 0-13
+						</option>
+						<option value="814" departmentId="59" >
+							Москва 0-14
+						</option>
+						<option value="815" departmentId="59" >
+							Москва 0-15
+						</option>
+						<option value="816" departmentId="59" >
+							Москва 0-16
+						</option>
+						<option value="832" departmentId="59" >
+							Москва 0-17
+						</option>
+						<option value="973" departmentId="59" >
+							Москва 0-18
+						</option>
+						<option value="974" departmentId="59" >
+							Москва 0-19
+						</option>
+						<option value="1081" departmentId="59" >
+							Москва 0-20
+						</option>
+						<option value="1082" departmentId="59" >
+							Москва 0-21
+						</option>
+						<option value="1107" departmentId="59" >
+							Москва 0-22
+						</option>
+						<option value="1108" departmentId="59" >
+							Москва 0-23
+						</option>
+						<option value="1157" departmentId="59" >
+							Москва 0-24
+						</option>
+						<option value="1294" departmentId="59" >
+							Москва 0-25
+						</option>
+						<option value="1305" departmentId="59" >
+							Москва 0-26
+						</option>
+						<option value="1438" departmentId="59" >
+							Москва 0-27
+						</option>
+				</optgroup>
+	</select>
+
+<script type="text/javascript">
+	$('#unitId').on("change", function () {
+		setSelectedUnitId("000D3A240C719A8711E68ABA13FCB0C6", $('#unitId').val());
+	});
+
+    var selectUnitsControl =
+    {
+        validate: function() {
+            var selectedCount = $('#unitId').find(':selected').length;
+            if (selectedCount > 1) return { isValid: true };
+            if (selectedCount === 1 && $('#unitId').find(':selected')[0].value !== "") return { isValid: true };
+
+            return { isValid: false, message: 'Не выбрано ни одно подразделение' };
+        },
+
+        toArray: function ($selectUnitsCotrol) {
+
+            var selectpicker = $selectUnitsCotrol && $selectUnitsCotrol instanceof jQuery ? $selectUnitsCotrol : $('#unitId'),
+                items = selectpicker.find('option:selected');
+
+            if (items &&
+                items.length) {
+
+                var selectedItemsArray = [];
+
+                items.each(function (i,o) {
+
+                    if (o &&
+                        o.value) {
+                        selectedItemsArray.push(o.value * 1);
+                    }
+
+                });
+
+                return selectedItemsArray;
+
+            }
+            else
+                return [];
+
+        },
+
+        getSelectedUnits: function ($selectUnitsCotrol) {
+            var selectpicker = $selectUnitsCotrol && $selectUnitsCotrol instanceof jQuery ? $selectUnitsCotrol : $('#unitId'),
+                items = selectpicker.find('option:selected');
+
+            if (items && items.length) {
+
+                var units = [];
+
+                items.each(function (i, o) {
+                    if (o && o.value) {
+                        var unit = {
+                            id: o.value,
+                            name: o.text,
+                            departmentId: o.getAttribute('departmentId')
+                        }
+                        units.push(unit);
+                    }
+                });
+
+                return units;
+            }
+            else
+                return [];
+        }
+    }
+</script>
+
+			</div>
+			<div class="col-md-10">&nbsp;</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4 col-xs-12">
+				<div id="revenueBlock"></div>
+				<div id="stopsBlock"></div>
+				<div id="corporateOrderBlock"></div>
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<div id="kitchenBlock"></div>
+			</div>
+			<div class="col-md-4 col-xs-12">
+				<div id="deliveryBlock"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div id="shiftBlock"></div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("#unitId").dodoChosen({ disable_search: true, width: "220px" });
+
+		var reloadPartials = function(unitId) {
+			setSelectedUnitId('000D3A240C719A8711E68ABA13FCB0C6', unitId);
+
+			ajax.get('/OfficeManager/OperationalStatistics/RevenuePartial', '#revenueBlock', { unitId: unitId }, "#revenueBlock", function () {
+				ShowErrorMessage('#revenueBlock');
+			});
+
+			ajax.get('/OfficeManager/OperationalStatistics/UnitStopsPartial', '#stopsBlock', { unitId: unitId }, "#stopsBlock", function () {
+				ShowErrorMessage('#stopsBlock');
+			});
+
+			ajax.get('/OfficeManager/OperationalStatistics/KitchenPartial', '#kitchenBlock', { unitId: unitId }, "#kitchenBlock", function () {
+				$('#kitchenBlock').html('<span class="loadChartError">Извините, график временно недоступен<span>');
+			});
+
+			ajax.get('/OfficeManager/OperationalStatistics/KitchenEmployeeListPartial', '#shiftBlock', { unitId: unitId }, "#shiftBlock", function () {
+				ShowErrorMessage('#shiftBlock');
+			});
+
+			ajax.get('/OfficeManager/OperationalStatistics/DeliveryWorkPartial', '#deliveryBlock', { unitId: unitId }, "#deliveryBlock", function () {
+				ShowErrorMessage('#deliveryBlock');
+			});
+
+			ajax.get('/OfficeManager/OperationalStatistics/CorporateOrdersPartial', '#corporateOrderBlock', { unitId: unitId }, "#corporateOrderBlock", function () {
+            	ShowErrorMessage('#corporateOrderBlock');
+            });
+		}
+
+		$("#unitId").change(function () {
+			// $.blockUI();
+			var unitId = $("#unitId").val();
+			reloadPartials(unitId);
+
+			ajax.get('/OfficeManager/OperationalStatistics/StopSaleInformationPartial', '', { unitId: unitId }, function (partialHtml) {
+				$('#stopSaleInformation').html(partialHtml);
+				$.unblockUI();
+			});
+
+			// Что за фигня?
+			if (document.getElementById('performance-inline') == null) {
+				return;
+			}
+			else {
+				document.getElementById('performance-inline').src = 'https://new.dodopizza.info/performance-inline/?id=' + unitId;
+			}
+		});
+
+		var unitId = $("#unitId").val();
+		reloadPartials(unitId);
+
+		// добавляем адаптивность
+		$("head").append('<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />');
+	});
+</script>
+		</section><!-- .content ends -->
+
+	</div><!-- wrap ends -->
+</div><!-- all ends -->
+
+
+<footer class="footer">
+	<div class="container">
+		<div class="footer__inner">
+			<div class="footer__copyright">&copy;&nbsp;2023 Dodo Pizza</div>
+			<div class="footer__select-lang">
+
+
+<style>
+	.selectLanguage {
+		width: 150px;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.selectLanguage_lang {
+		height: 34px;
+		width: 100%;
+		max-width: 150px;
+		padding: 5px;
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		border-radius: 2px;
+		background-color: #fff;
+		border: 1px solid #ccc;
+		font-size: 14px;
+		color: #000;
+		-webkit-box-shadow: inset 0 4px 4px -4px #dadada;
+		-moz-box-shadow: inset 0 4px 4px -4px #dadada;
+		box-shadow: inset 0 4px 4px -4px #dadada;
+	}
+</style>
+
+<div class="selectLanguage">
+	<form id="changeLanguage" method="POST" action="/Infrastructure/Home/ChangeCulture">
+
+		<select class="selectLanguage_lang" name="lang" onchange="$.blockUI(); document.getElementById('changeLanguage').submit();">
+				<option selected value="ru-RU">русский (Россия)</option>
+				<option  value="en-US">English (United States)</option>
+				<option  value="en-GB">English (United Kingdom)</option>
+				<option  value="ro-RO">rom&#xE2;n&#x103; (Rom&#xE2;nia)</option>
+				<option  value="zh-CN">&#x4E2D;&#x6587;&#xFF08;&#x4E2D;&#x56FD;&#xFF09;</option>
+				<option  value="lt-LT">lietuvi&#x173; (Lietuva)</option>
+				<option  value="et-EE">eesti (Eesti)</option>
+				<option  value="sl-SI">sloven&#x161;&#x10D;ina (Slovenija)</option>
+				<option  value="uk-UA">українська (Україна)</option>
+				<option  value="pl-PL">polski (Polska)</option>
+				<option  value="de-DE">Deutsch (Deutschland)</option>
+				<option  value="vi-VN">Ti&#x1EBF;ng Vi&#x1EC7;t (Vi&#x1EC7;t Nam)</option>
+				<option  value="eo-001">esperanto (Mondo)</option>
+				<option  value="cs-CZ">&#x10D;e&#x161;tina (&#x10C;esko)</option>
+				<option  value="sk-SK">sloven&#x10D;ina (Slovensko)</option>
+				<option  value="fi-FI">suomi (Suomi)</option>
+				<option  value="sr-Latn-RS">srpski (latinica, Srbija)</option>
+		</select>
+
+		<input id="Role" name="Role" type="hidden" value="" />
+
+	</form>
+</div></div>
+		</div>
+	</div>
+</footer>
+
+<script type="text/javascript">
+
+	var subMenu = $('#' + 'OperationalStatisticsMenuItem' + 'SubMenu');
+	if (subMenu) {
+		subMenu.css('display', 'block');
+	}
+
+	var subMenuItemWrap = $('#' + '' + 'Wrap');
+	if (subMenuItemWrap) {
+		subMenuItemWrap.addClass('catMenu_item-active');
+	}
+
+	var subMenuItemLink = $('#' + '' + 'Link');
+	if (subMenuItemLink) {
+		subMenuItemLink.href = '#';
+		subMenuItemLink.addClass('catMenu_link-active');
+	}
+</script>
+
+
+
+<script src="/Scripts/UserStatus/userStatusChecker.js?v=999.13516" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+    const userStatusChecker = createUserStatusChecker({
+        logOffUrl: '/Infrastructure/Authenticate/LogOff',
+        userStatusUrl: '/Infrastructure/Authenticate/UserStatus',
+        checkIntervalMilliseconds: 120000,
+    });
+
+    userStatusChecker.init();
+</script>
+<script
+	type="text/javascript"
+	src="https://pyrus.com/js/webwidget?id=af4Hsj1YgsmTtQjVkxpz9iWNiUwYXQ4Db3fnsNbL1QHYxd7QCNXVAcIpXnPvV-DgB7vt16zadbrCzffGUg1Z9M94P7hCbY9EqrvuwDh3T8wH-JHJvM0IDzPUxhrx3LDXIKUGYw%3D%3D"
+	async=true>
+</script>
+
+<script>
+(async () => {
+  await waitForPyrusWigetLoading();
+
+  watchForPyrusWidgetSize();
+
+  function waitForPyrusWigetLoading() {
+    return new Promise((resolve) => {
+      function pyrusWidgetLoaded(e) {
+        if (e.data === "PyrusWebWidget settings loaded") {
+          window.removeEventListener("message", pyrusWidgetLoaded);
+          resolve();
+        }
+      }
+      window.addEventListener("message", pyrusWidgetLoaded);
+    });
+  }
+
+  function watchForPyrusWidgetSize() {
+    const pyrusWiget = document.getElementById("pyrus-widget-container-element");
+
+    const observer = new MutationObserver(() => {
+      if (pyrusWiget.style.width === `200px`) {
+        pyrusWiget.style.width = "75px";
+      }
+      if (pyrusWiget.style.height === `165px`) {
+        pyrusWiget.style.height = "80px";
+      }
+    });
+
+    observer.observe(pyrusWiget, { attributes: true, attributeFilter: ["style"] });
+  }
+})();
+</script>
+<script src="https://09cnby6jf8kk.statuspage.io/embed/script.js" async></script>
+</body>
+</html>
