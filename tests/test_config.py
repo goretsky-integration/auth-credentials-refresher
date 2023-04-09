@@ -1,32 +1,32 @@
-import os
-from uuid import UUID
+import pathlib
+import textwrap
 
-from config import load_config, Config
+from config import read_toml_config_string, read_toml_config_file, Config
+
+CONFIG_STRING = textwrap.dedent('''\
+    auth_base_url = "https://auth.dodois.test"
+    office_manager_base_url = "https://officemanager.dodois.test"
+    country_code = "kg"
+    remember_login = true
+''')
+
+EXPECTED_CONFIG = Config(
+    auth_base_url='https://auth.dodois.test',
+    office_manager_base_url='https://officemanager.dodois.test',
+    country_code='kg',
+    remember_login=True,
+)
 
 
-def test_load_config():
-    config_text = '''[base_url]
-auth = "http://localhost:8000/"
-office_manager = "http://localhost:7000/"
+def test_toml_config_string_reader():
+    assert read_toml_config_string(CONFIG_STRING) == EXPECTED_CONFIG
 
-[auth_credentials]
-username = "Benedict"
-password = "Cumberbatch"
-role_id = 1
-department_uuid = "ffa50591-7448-4c88-95bf-ec4ebc8af56d"'''
 
-    expected = Config(
-        auth_base_url='http://localhost:8000/',
-        office_manager_base_url='http://localhost:7000/',
-        username='Benedict',
-        password='Cumberbatch',
-        role_id=1,
-        department_uuid=UUID('ffa50591-7448-4c88-95bf-ec4ebc8af56d'),
-    )
+def test_toml_config_file_reader():
+    file_path = pathlib.Path(__file__).parent / 'temp_config.toml'
+    file_path.write_text(CONFIG_STRING)
 
     try:
-        with open('./test_config.toml', 'w') as file:
-            file.write(config_text)
-        assert load_config('./test_config.toml') == expected
+        assert read_toml_config_file(file_path) == EXPECTED_CONFIG
     finally:
-        os.remove('./test_config.toml')
+        file_path.unlink(missing_ok=True)
