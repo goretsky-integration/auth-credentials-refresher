@@ -1,8 +1,15 @@
+from typing import Protocol
+
 from bs4 import BeautifulSoup
 
 import models
 
 __all__ = ('parse_account_login_form_data', 'fill_account_login_form_data')
+
+
+class IAccountLoginConfig(Protocol):
+    country_code: str
+    remember_login: bool
 
 
 def parse_account_login_form_data(
@@ -27,7 +34,7 @@ def fill_account_login_form_data(
         *,
         empty_account_login_form_data: models.EmptyAccountLoginFormData,
         office_manager_account: models.OfficeManagerAccount,
-        account_login_config: models.AccountLoginConfig,
+        account_login_config: IAccountLoginConfig,
 ) -> models.FilledAccountLoginFormData:
     return models.FilledAccountLoginFormData(
         return_url=empty_account_login_form_data.return_url,
